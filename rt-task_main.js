@@ -38,11 +38,11 @@ var test_stimuli = [{
     },
     {
         stimulus: '<div style="font-size:60px;">Teeth</div>',
-        data: {test_part: 'Teeth', correct_response: 'j'}
+        data: {test_part: 'Teeth', correct_response: 'f'}
     },
     {
         stimulus: '<div style="font-size:60px;">Face</div>',
-        data: {test_part: 'Face', correct_response: 'j'}
+        data: {test_part: 'Face', correct_response: 'f'}
     }
 ];
 
