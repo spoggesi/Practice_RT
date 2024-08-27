@@ -58,11 +58,6 @@ var test_stimuli = [{
     }
 ];
 
-var anchor = {
-    '<div class = leftBoxes><p> <strong>NO</strong> </p></div>' +
-    '<div class = rightBoxes><p> <strong>YES</strong> </p></div>',
-    }
-
 var fixation = {
     type: 'html-keyboard-response',
     stimulus: '<div style="font-size:60px;">+</div>',
@@ -86,7 +81,7 @@ var test = {
 }
 
 var test_procedure = {
-    timeline: [fixation, test, anchor],
+    timeline: [fixation, test],
     timeline_variables: test_stimuli,
     repetitions: 3,
     randomize_order: true
