@@ -29,7 +29,7 @@ timeline.push(instructions);
 /* test trials */
 
 var test_stimuli = [{
-        stimulus: '<div style="font-size:60px;">hot</div>',
+        stimulus: '<div style="font-size:60px;">hot</div>', 
         data: {
             test_part: 'hot', 
             correct_response: 'j'
@@ -70,25 +70,20 @@ var fixation = {
     }
 }
 
-var anchor = {
-    type: "html-keyboard-response",
-    stimulus: 
-        '<div class = leftBoxes><p> NO </p></div>' +
-        '<div class = rightBoxes><p> YES </p></div>'
-}
-
 var test = {
     type: "html-keyboard-response",
     stimulus: jsPsych.timelineVariable('stimulus'),
     choices: ['f', 'j'],
     data: jsPsych.timelineVariable('data'),
+    prompt: '<div class = leftBoxes><p> NO </p></div>' +
+            '<div class = rightBoxes><p> YES </p></div>',
     on_finish: function (data) {
         data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     },
 }
 
 var test_procedure = {
-    timeline: [fixation, test, anchor],
+    timeline: [fixation, test],
     timeline_variables: test_stimuli,
     repetitions: 3,
     randomize_order: true
