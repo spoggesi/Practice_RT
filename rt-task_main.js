@@ -93,7 +93,7 @@ var debrief_block = {
         var face = jsPsych.data.get().filter({
             test_part: 'Face'
         });
-        var rt_hot = Math.round(Hot.select('rt').mean());
+        var rt_hot = Math.round(hot.select('rt').mean());
         var rt_cold = Math.round(cold.select('rt').mean());
         var rt_teeth = Math.round(teeth.select('rt').mean());
         var rt_face = Math.round(face.select('rt').mean());
