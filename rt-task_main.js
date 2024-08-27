@@ -30,19 +30,31 @@ timeline.push(instructions);
 
 var test_stimuli = [{
         stimulus: '<div style="font-size:60px;">hot</div>',
-        data: {test_part: 'hot', correct_response: 'j'}
+        data: {
+            test_part: 'hot', 
+            correct_response: 'j'
+        }
     },
     {
         stimulus: '<div style="font-size:60px;">cold</div>',
-        data: {test_part: 'cold', correct_response: 'j'}
+        data: {
+            test_part: 'cold', 
+            correct_response: 'j'
+        }
     },
     {
         stimulus: '<div style="font-size:60px;">teeth</div>',
-        data: {test_part: 'teeth', correct_response: 'f'}
+        data: {
+            test_part: 'teeth', 
+            correct_response: 'f'
+        }
     },
     {
         stimulus: '<div style="font-size:60px;">face</div>',
-        data: {test_part: 'face', correct_response: 'f'}
+        data: {
+            test_part: 'face', 
+            correct_response: 'f'
+        }
     }
 ];
 
@@ -98,8 +110,8 @@ var debrief_block = {
         var rt_teeth = Math.round(teeth.select('rt').mean());
         var rt_face = Math.round(face.select('rt').mean());
 
-        return "<p>energetic " + rt_energetic + "ms.</p>" +
-            "<p>indulgent " + rt_indulgent + "ms.</p>" +
+        return "<p>hot " + rt_hot + "ms.</p>" +
+            "<p>cold " + rt_cold + "ms.</p>" +
             "<p>Press any key to complete the experiment. Thank you!</p>";
 
     }
