@@ -19,7 +19,8 @@ var instructions = {
     type: "html-keyboard-response",
     stimulus: "<p>You will now carry out a fast response task. Please answer as <strong>QUICKLY</strong> as you can.</p>" +
                 "<p>To get you ready for this you will do a few practice trials.</p>" +
-                "<p>You will see words appear quickly on-screen. Respond yes by using the J key or no using the F key to whether these words can be associated with WEATHER TERMS.</p>" +
+                "<p>You will see words appear quickly on-screen. Respond <strong>YES</strong> by using the <strong>J</strong> key or <strong>NO</strong> using the <strong>F</strong> + 
+                "key to whether these words can be associated with <strong>WEATHER TERMS</strong>.</p>" +
                 "<p>Please place your fingers over the F and J keys ready to make your choices.</p>" +
                 "<p>Press any key to begin.</p>",
     post_trial_gap: 2000
