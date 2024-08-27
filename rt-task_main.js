@@ -30,20 +30,20 @@ timeline.push(instructions);
 /* test trials */
 
 var test_stimuli = [{
-        stimulus: '<div style="font-size:60px;">Hot</div>',
-        data: {test_part: 'Hot', correct_response: 'j'}
+        stimulus: '<div style="font-size:60px;">hot</div>',
+        data: {test_part: 'hot', correct_response: 'j'}
     },
     {
-        stimulus: '<div style="font-size:60px;">Cold</div>',
-        data: {test_part: 'Cold', correct_response: 'j'}
+        stimulus: '<div style="font-size:60px;">cold</div>',
+        data: {test_part: 'cold', correct_response: 'j'}
     },
     {
-        stimulus: '<div style="font-size:60px;">Teeth</div>',
-        data: {test_part: 'Teeth', correct_response: 'f'}
+        stimulus: '<div style="font-size:60px;">teeth</div>',
+        data: {test_part: 'teeth', correct_response: 'f'}
     },
     {
-        stimulus: '<div style="font-size:60px;">Face</div>',
-        data: {test_part: 'Face', correct_response: 'f'}
+        stimulus: '<div style="font-size:60px;">face</div>',
+        data: {test_part: 'face', correct_response: 'f'}
     }
 ];
 
@@ -83,16 +83,16 @@ var debrief_block = {
     type: "html-keyboard-response",
     stimulus: function () {
         var hot = jsPsych.data.get().filter({
-            test_part: 'Hot'
+            test_part: 'hot'
         });
         var cold = jsPsych.data.get().filter({
-            test_part: 'Cold'
+            test_part: 'cold'
         });
         var teeth = jsPsych.data.get().filter({
-            test_part: 'Teeth'
+            test_part: 'teeth'
         });
         var face = jsPsych.data.get().filter({
-            test_part: 'Face'
+            test_part: 'face'
         });
         var rt_hot = Math.round(hot.select('rt').mean());
         var rt_cold = Math.round(cold.select('rt').mean());
