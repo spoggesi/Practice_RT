@@ -70,6 +70,13 @@ var fixation = {
     }
 }
 
+var anchor = {
+    type: "html-keyboard-response",
+    stimulus: 
+        '<div class = leftBoxes><p> NO </p></div>' +
+        '<div class = rightBoxes><p> YES </p></div>'
+}
+
 var test = {
     type: "html-keyboard-response",
     stimulus: jsPsych.timelineVariable('stimulus'),
@@ -81,7 +88,7 @@ var test = {
 }
 
 var test_procedure = {
-    timeline: [fixation, test],
+    timeline: [fixation, test, anchor],
     timeline_variables: test_stimuli,
     repetitions: 3,
     randomize_order: true
