@@ -2,7 +2,7 @@
 /* Change 1: Adding the image hosting site */
 // define the site that hosts stimuli images
 // usually https://<your-github-username>.github.io/<your-experiment-name>/
-var repo_site = "https://spoggesi.github.io/Qualtrics-test/"; 
+var repo_site = "https://spoggesi.github.io/Practice_RT/"; 
 
 /* create timeline */
 var timeline = [];
