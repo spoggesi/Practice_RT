@@ -85,13 +85,8 @@ var test = {
     },
 }
 
-var experiment = [];
-    experiment.push(anchor);
-    experiment.push({
-        timeline: test});
-
 var test_procedure = {
-    timeline: [fixation, experiment],
+    timeline: [fixation, test, anchor],
     timeline_variables: test_stimuli,
     repetitions: 3,
     randomize_order: true
