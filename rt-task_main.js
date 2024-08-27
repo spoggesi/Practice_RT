@@ -17,18 +17,11 @@ timeline.push(welcome_block);
 /* define instructions trial */
 var instructions = {
     type: "html-keyboard-response",
-    stimulus: "<p>In this experiment, a circle will appear in the center " +
-        "of the screen.</p><p>If the circle is <strong>blue</strong>, " +
-        "press the letter F on the keyboard as fast as you can.</p>" +
-        "<p>If the circle is <strong>orange</strong>, press the letter J " +
-        "as fast as you can.</p>" +
-        "<div style='width: 700px;'>" +
-        "<div style='float: left;'><img src='" + repo_site + "img/blue.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
-        "<p class='small'><strong>Press the F key</strong></p></div>" +
-        "<div class='float: right;'><img src='" + repo_site + "img/orange.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
-        "<p class='small'><strong>Press the J key</strong></p></div>" +
-        "</div>" +
-        "<p>Press any key to begin.</p>",
+    stimulus: "<p>You will now carry out a fast response task. Please answer as <strong>QUICKLY</strong> as you can.</p>" +
+                "<p>To get you ready for this you will do a few practice trials.</p>" +
+                "<p>You will see words appear quickly on-screen. Respond yes by using the J key or no using the F key to whether these words can be associated with WEATHER TERMS.</p>" +
+                "<p>Please place your fingers over the F and J keys ready to make your choices.</p>" +
+                "<p>Press any key to begin.</p>",
     post_trial_gap: 2000
 };
 timeline.push(instructions);
@@ -36,18 +29,20 @@ timeline.push(instructions);
 /* test trials */
 
 var test_stimuli = [{
-        stimulus: '<div style="font-size:60px;">Energetic</div>',
-        data: {
-            test_part: 'energetic',
-            correct_response: 'j'
-        }
+        stimulus: '<div style="font-size:60px;">Hot</div>',
+        data: {test_part: 'Hot', correct_response: 'j'}
     },
     {
-        stimulus: '<div style="font-size:60px;">Indulgent</div>',
-        data: {
-            test_part: 'indulgent',
-            correct_response: 'j'
-        }
+        stimulus: '<div style="font-size:60px;">Cold</div>',
+        data: {test_part: 'Cold', correct_response: 'j'}
+    },
+    {
+        stimulus: '<div style="font-size:60px;">Teeth</div>',
+        data: {test_part: 'Teeth', correct_response: 'j'}
+    },
+    {
+        stimulus: '<div style="font-size:60px;">Face</div>',
+        data: {test_part: 'Face', correct_response: 'j'}
     }
 ];
 
@@ -86,15 +81,22 @@ timeline.push(test_procedure);
 var debrief_block = {
     type: "html-keyboard-response",
     stimulus: function () {
-
-        var energetic = jsPsych.data.get().filter({
-            test_part: 'energetic'
+        var hot = jsPsych.data.get().filter({
+            test_part: 'Hot'
         });
-        var indulgent = jsPsych.data.get().filter({
-            test_part: 'indulgent'
+        var cold = jsPsych.data.get().filter({
+            test_part: 'Cold'
         });
-        var rt_energetic = Math.round(energetic.select('rt').mean());
-        var rt_indulgent = Math.round(indulgent.select('rt').mean());
+        var teeth = jsPsych.data.get().filter({
+            test_part: 'Teeth'
+        });
+        var face = jsPsych.data.get().filter({
+            test_part: 'Face'
+        });
+        var rt_hot = Math.round(Hot.select('rt').mean());
+        var rt_cold = Math.round(cold.select('rt').mean());
+        var rt_teeth = Math.round(teeth.select('rt').mean());
+        var rt_face = Math.round(face.select('rt').mean());
 
         return "<p>energetic " + rt_energetic + "ms.</p>" +
             "<p>indulgent " + rt_indulgent + "ms.</p>" +
