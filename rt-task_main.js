@@ -75,8 +75,7 @@ var test = {
     stimulus: jsPsych.timelineVariable('stimulus'),
     choices: ['f', 'j'],
     data: jsPsych.timelineVariable('data'),
-    prompt: '<div class = "leftBoxes><p> NO </p></div>' + 
-            '<div class = "rightBoxes"><p> YES </p></div>',
+    prompt: 'NO YES', rows: 5,
     on_finish: function (data) {
         data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     },
