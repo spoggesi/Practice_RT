@@ -62,7 +62,7 @@ var fixation = {
     type: 'html-keyboard-response',
     stimulus: '<div style="font-size:60px;">+</div>',
     choices: jsPsych.NO_KEYS,
-    prompt: '<div class = leftBoxes>NO-F</div> <div class = rightBoxes>YES-J</div>',
+    prompt: '<div class = leftBoxes>press "F" for NO</div> <div class = rightBoxes>press "J" for YES</div>',
     trial_duration: function () {
         return jsPsych.randomization.sampleWithoutReplacement([1000], 1)[0];
     },
@@ -76,7 +76,7 @@ var test = {
     stimulus: jsPsych.timelineVariable('stimulus'),
     choices: ['f', 'j'],
     data: jsPsych.timelineVariable('data'),
-    prompt: '<div class = leftBoxes>NO-F</div> <div class = rightBoxes>YES-J</div>',
+    prompt: '<div class = leftBoxes>press "F" for NO</div> <div class = rightBoxes>press "J" for YES</div>',
     on_finish: function (data) {
         data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     },
