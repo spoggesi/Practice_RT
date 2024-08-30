@@ -88,33 +88,3 @@ var test_procedure = {
     randomize_order: true
 }
 timeline.push(test_procedure);
-
-/* define debrief */
-
-var debrief_block = {
-    type: "html-keyboard-response",
-    stimulus: function () {
-        var hot = jsPsych.data.get().filter({
-            test_part: 'hot'
-        });
-        var cold = jsPsych.data.get().filter({
-            test_part: 'cold'
-        });
-        var teeth = jsPsych.data.get().filter({
-            test_part: 'teeth'
-        });
-        var face = jsPsych.data.get().filter({
-            test_part: 'face'
-        });
-        var rt_hot = Math.round(hot.select('rt').mean());
-        var rt_cold = Math.round(cold.select('rt').mean());
-        var rt_teeth = Math.round(teeth.select('rt').mean());
-        var rt_face = Math.round(face.select('rt').mean());
-
-        return "<p>hot " + rt_hot + "ms.</p>" +
-            "<p>cold " + rt_cold + "ms.</p>" +
-            "<p>Press any key to complete the experiment. Thank you!</p>";
-
-    }
-};
-timeline.push(debrief_block);
