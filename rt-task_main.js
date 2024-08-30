@@ -62,6 +62,7 @@ var fixation = {
     type: 'html-keyboard-response',
     stimulus: '<div style="font-size:60px;">+</div>',
     choices: jsPsych.NO_KEYS,
+    prompt: '<div class = leftBoxes>NO-F</div> <div class = rightBoxes>YES-J</div>',
     trial_duration: function () {
         return jsPsych.randomization.sampleWithoutReplacement([1000], 1)[0];
     },
